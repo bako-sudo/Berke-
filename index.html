@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Berke Anketi</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background-color: #f0f0f0;
+    }
+    h1 {
+      font-size: 48px;
+      color: #333;
+    }
+    #buttons {
+      margin-top: 50px;
+    }
+    button {
+      font-size: 24px;
+      padding: 10px 20px;
+      margin: 10px;
+      cursor: pointer;
+    }
+    #hayirBtn {
+      position: absolute;
+    }
+    #sonuc {
+      margin-top: 30px;
+      font-size: 32px;
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>berke orospu çocuğu mu?</h1>
+
+  <div id="buttons">
+    <button onclick="evet()">Evet</button>
+    <button id="hayirBtn" onclick="hayir(event)">Hayır</button>
+  </div>
+
+  <div id="sonuc"></div>
+
+  <script>
+    function evet() {
+      document.getElementById("sonuc").innerText = "oç berke";
+    }
+
+    function hayir(e) {
+      const btn = document.getElementById("hayirBtn");
+      const maxX = window.innerWidth - btn.offsetWidth;
+      const maxY = window.innerHeight - btn.offsetHeight;
+      const randomX = Math.floor(Math.random() * maxX);
+      const randomY = Math.floor(Math.random() * maxY);
+      btn.style.left = `${randomX}px`;
+      btn.style.top = `${randomY}px`;
+    }
+  </script>
+
+</body>
+</html>
